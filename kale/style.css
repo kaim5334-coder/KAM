@@ -1,0 +1,141 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6e5ff;
+  color: #382b53;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  background: linear-gradient(130deg, #ffe4f0 0%, #fef3d9 50%, #daeaff 100%);
+  position: relative;
+}
+
+#open-letter-btn {
+  background: #fffaf4;
+  border: 2px solid #c090d5;
+  border-radius: 20px;
+  padding: 3rem 6rem;
+  font-size: 3rem;
+  color: #8b3f82;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(69, 42, 110, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+#open-letter-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(69, 42, 110, 0.4);
+}
+
+.letter-card {
+  max-width: 720px;
+  width: 100%;
+  background: #fffaf4;
+  padding: 2rem;
+  border: 2px dashed #c090d5;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(69, 42, 110, 0.2);
+  animation: float 1.4s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.letter-card.open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.letter-header .date {
+  color: #7b5a9c;
+  font-size: 0.98rem;
+  margin-bottom: 0.4rem;
+}
+
+.letter-header h1 {
+  font-family: 'Lucida Handwriting', 'Comic Sans MS', fantasy;
+  font-size: 2rem;
+  color: #8b3f82;
+  margin-bottom: 1rem;
+}
+
+.letter-body p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.8px;
+  margin-top: 0.4rem;
+  color: #9260a6;
+}
+
+.wish-box {
+  margin-top: 1.2rem;
+  background: #fff1ff;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid #f6c5f8;
+}
+
+.wish-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  color: #67255b;
+}
+
+.wish-box ul {
+  list-style: inside square;
+  color: #4a2b4f;
+}
+
+.wish-box li {
+  margin-bottom: 0.5rem;
+}
+
+.letter-footer {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #5c3c6f;
+}
+
+@media (max-width: 640px) {
+  .letter-card {
+    padding: 1.2rem;
+  }
+  .letter-header h1 {
+    font-size: 1.6rem;
+  }
+  .letter-body p {
+    font-size: 1rem;
+  }
+}
+
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
